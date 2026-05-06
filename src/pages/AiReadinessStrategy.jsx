@@ -96,7 +96,7 @@ export default function AiReadinessStrategy() {
             side="right"
             sideContent={
               <ImageWithFallback
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68a59a4990a82f121fd2e394/90aaf3b1b_582f911c-37e6-4510-b5d9-18f6dae2a7d0.jpg"
+                src="/assets/ai-readiness.jpg"
                 alt="Placeholder visual"
                 className="w-full border-2 border-black"
                 style={{ objectPosition: "center" }}

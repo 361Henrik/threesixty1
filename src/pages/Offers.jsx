@@ -4,8 +4,6 @@ import { useLanguage } from "@/components/i18n/LanguageContext";
 import { offersCategories } from "@/components/offers/offersData";
 import { offersCategoriesNo } from "@/components/offers/offersData";
 import NewspaperCategory from "@/components/offers/NewspaperCategory";
-import { OfferCategory } from "@/entities/OfferCategory";
-import { OfferService } from "@/entities/OfferService";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 
@@ -21,38 +19,6 @@ export default function Offers() {
     }
   }, [lang, navigate]);
 
-  const [loading, setLoading] = React.useState(true);
-  const [categoriesDb, setCategoriesDb] = React.useState([]);
-  const [servicesByCategory, setServicesByCategory] = React.useState({});
-
-  const loadFromDb = React.useCallback(async () => {
-    setLoading(true);
-    const cats = await OfferCategory.list("order");
-    if (!cats || cats.length === 0) {
-      // No DB content: just render static data without any CTA
-      setCategoriesDb([]);
-      setServicesByCategory({});
-      setLoading(false);
-      return;
-    }
-    const svcs = await OfferService.list("order");
-    const grouped = svcs.reduce((acc, s) => {
-      const k = s.category_key || "_";
-      if (!acc[k]) acc[k] = [];
-      acc[k].push(s);
-      return acc;
-    }, {});
-    setCategoriesDb(cats);
-    setServicesByCategory(grouped);
-    setLoading(false);
-  }, []);
-
-  React.useEffect(() => {
-    loadFromDb();
-  }, [loadFromDb]);
-
-  // decide data source: DB if present, else static file
-  const hasEditableContent = categoriesDb.length > 0;
   const staticDataset = lang === "no" ? offersCategoriesNo : offersCategories;
 
   return (
@@ -84,33 +50,11 @@ export default function Offers() {
           }
         </header>
 
-        {/* Newspaper layout: DB-backed for both languages if present; otherwise static per language */}
-        {hasEditableContent ? (
-          <div className="space-y-10">
-            {categoriesDb
-              .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-              .slice(0, 5)
-              .map((cat) => (
-                <NewspaperCategory
-                  key={cat.key}
-                  category={{
-                    // pass full DB category to preserve *_no fields
-                    ...cat,
-                    services: (servicesByCategory[cat.key] || [])
-                      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-                      // pass full DB service objects to preserve *_no fields
-                      .map((s) => ({ ...s }))
-                  }}
-                />
-              ))}
-          </div>
-        ) : (
-          <div className="space-y-10">
-            {staticDataset.slice(0, 5).map((cat) => (
-              <NewspaperCategory key={cat.key} category={cat} />
-            ))}
-          </div>
-        )}
+        <div className="space-y-10">
+          {staticDataset.slice(0, 5).map((cat) => (
+            <NewspaperCategory key={cat.key} category={cat} />
+          ))}
+        </div>
       </div>
 
       <style>{`

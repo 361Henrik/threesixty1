@@ -172,7 +172,7 @@ export default function AiEnhancedWorkflows() {
             side="right"
             sideContent={
               <ImageWithFallback
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68a59a4990a82f121fd2e394/67977bd4c_Screenshot2025-09-16at162335.png"
+                src="/assets/ai-workflows.png"
                 alt="Workflow illustration placeholder"
                 className="w-full"
                 style={{ objectPosition: "center" }}

@@ -328,7 +328,7 @@ Resultatet er bedre samspill, mindre støy og målbare resultater som varer.
             {/* Left column: Henrik portrait */}
             <div>
               <ImageWithFallback
-                src="https://qtrypzzcjebvfciynt.supabase.co/storage/v1/object/public/base44-prod/public/68a59a4990a82f121fd2e394/5ac7e55ea_IMG_5949.jpg"
+                src="/assets/henrik-portrait.jpg"
                 alt={lang === "no" ? "Portrett – nærbilde" : "Close-up portrait"}
                 className="w-full object-contain h-auto max-h-80 md:max-h-96"
                 style={{ objectPosition: "center" }} />
@@ -406,7 +406,7 @@ Resultatet er bedre samspill, mindre støy og målbare resultater som varer.
           <div className="md:col-span-2">
             <div className="pt-6 h-full flex flex-col">
               <ImageWithFallback
-                src="https://qtrypzzcjebvfciynt.supabase.co/storage/v1/object/public/base44-prod/public/68a59a4990a82f121fd2e394/5ac7e55ea_IMG_5949.jpg"
+                src="/assets/henrik-portrait.jpg"
                 alt={
                 lang === "no" ? "Portrett – nærbilde" : "Close-up portrait"
                 }

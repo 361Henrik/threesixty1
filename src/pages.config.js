@@ -33,7 +33,6 @@ import ACoffeeWithHenrik from './pages/ACoffeeWithHenrik';
 import Offers from './pages/Offers';
 import OfferCategory from './pages/OfferCategory';
 import OfferDetail from './pages/OfferDetail';
-import OffersEditor from './pages/OffersEditor';
 import RealityCheck from './pages/RealityCheck';
 import OffersNo from './pages/OffersNo';
 import __Layout from './Layout.jsx';
@@ -75,7 +74,6 @@ export const PAGES = {
     "Offers": Offers,
     "OfferCategory": OfferCategory,
     "OfferDetail": OfferDetail,
-    "OffersEditor": OffersEditor,
     "RealityCheck": RealityCheck,
     "OffersNo": OffersNo,
 }

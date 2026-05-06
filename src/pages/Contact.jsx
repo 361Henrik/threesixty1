@@ -56,7 +56,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-[auto,1fr] gap-2 md:gap-3 items-start">
           <div className="justify-self-center md:justify-self-end md:mr-2">
             <ImageWithFallback
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68a59a4990a82f121fd2e394/4be168c4e_IMG_5949.jpg"
+              src="/assets/henrik-portrait.jpg"
               alt={lang === "no" ? "Portrett av Henrik C. Høst" : "Portrait of Henrik C. Høst"}
               className="w-40 h-40 md:w-56 md:h-56 object-cover"
               style={{ objectPosition: "center 10%" }}
