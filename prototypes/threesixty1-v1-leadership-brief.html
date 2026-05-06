@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>threesixty1.com V1 leadership brief</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --canvas: #f6f3ee;
+        --paper: #fbfaf7;
+        --green: #1f4a3a;
+        --deep: #15362a;
+        --terracotta: #c35c3c;
+        --bronze: #c9a962;
+        --ink: #171914;
+        --muted: #6d685f;
+        --line: #d8d0c3;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--canvas);
+        font-family: "Lexend", sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0;
+        overflow-wrap: break-word;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(31, 74, 58, 0.18);
+        background: rgba(246, 243, 238, 0.96);
+        backdrop-filter: blur(14px);
+      }
+
+      .topbar-inner {
+        display: grid;
+        max-width: 1440px;
+        grid-template-columns: 1fr auto auto;
+        gap: 22px;
+        align-items: center;
+        margin: 0 auto;
+        padding: 16px 28px;
+      }
+
+      .brand {
+        display: inline-flex;
+        flex-direction: column;
+        color: var(--green);
+        text-decoration: none;
+      }
+
+      .brand strong {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(27px, 3vw, 42px);
+        line-height: 0.9;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .nav a {
+        text-decoration: none;
+      }
+
+      .language-toggle {
+        display: inline-flex;
+        padding: 4px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--paper);
+      }
+
+      .language-toggle button {
+        min-width: 46px;
+        border: 0;
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: var(--green);
+        background: transparent;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .language-toggle button.active {
+        color: var(--ink);
+        background: var(--bronze);
+      }
+
+      .page {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 28px 72px;
+      }
+
+      .eyebrow {
+        margin-bottom: 12px;
+        color: var(--terracotta);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        min-height: calc(100vh - 76px);
+        grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+        gap: 44px;
+        align-items: center;
+        padding: 62px 0 38px;
+      }
+
+      .hero h1 {
+        max-width: 860px;
+        font-size: clamp(54px, 7.6vw, 116px);
+      }
+
+      .hero-lead {
+        max-width: 720px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: clamp(18px, 1.6vw, 24px);
+        font-weight: 500;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .button-primary,
+      .button-secondary {
+        display: inline-flex;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        padding: 13px 18px;
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .button-primary {
+        border: 1px solid var(--terracotta);
+        color: var(--white);
+        background: var(--terracotta);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--green);
+        color: var(--green);
+        background: transparent;
+      }
+
+      .hero-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      .hero-card img {
+        display: block;
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        object-position: center 12%;
+      }
+
+      .hero-card-body {
+        padding: 24px;
+      }
+
+      .operator-line {
+        color: var(--green);
+        font-family: "Playfair Display", serif;
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1.05;
+      }
+
+      .operator-copy {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .source-strip {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        border-top: 1px solid var(--green);
+        border-bottom: 1px solid var(--green);
+      }
+
+      .source-strip a {
+        min-height: 104px;
+        padding: 16px;
+        border-right: 1px solid var(--line);
+        color: var(--green);
+        text-decoration: none;
+      }
+
+      .source-strip a:last-child {
+        border-right: 0;
+      }
+
+      .source-strip span {
+        display: block;
+        color: var(--terracotta);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .source-strip strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .section {
+        padding: 66px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.42fr) minmax(0, 1fr);
+        gap: 48px;
+        align-items: start;
+      }
+
+      .section-title h2 {
+        font-size: clamp(40px, 4.6vw, 78px);
+      }
+
+      .section-title p {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .reality-grid,
+      .question-grid,
+      .value-grid,
+      .sector-grid,
+      .proof-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .reality-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+      }
+
+      .metric-panel,
+      .paper-panel,
+      .question,
+      .sector,
+      .proof,
+      .step,
+      .role-card,
+      .diagnostic-form,
+      .diagnostic-result {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .metric-panel {
+        padding: 24px;
+      }
+
+      .metric {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+        border-top: 1px solid var(--line);
+        padding: 18px 0;
+      }
+
+      .metric:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .metric:last-child {
+        padding-bottom: 0;
+      }
+
+      .metric strong {
+        color: var(--green);
+        font-family: "Playfair Display", serif;
+        font-size: 46px;
+        line-height: 0.9;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .paper-panel {
+        padding: 24px;
+      }
+
+      .paper-panel h3,
+      .diagnostic-result h3,
+      .role-output h3 {
+        color: var(--green);
+        font-size: clamp(32px, 3.2vw, 54px);
+      }
+
+      .paper-panel p {
+        margin-top: 14px;
+        color: var(--muted);
+      }
+
+      .question-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .question,
+      .sector,
+      .proof,
+      .role-card,
+      .step {
+        padding: 18px;
+      }
+
+      .question strong,
+      .sector strong,
+      .role-card strong,
+      .step strong {
+        display: block;
+        color: var(--green);
+        font-weight: 800;
+      }
+
+      .question span,
+      .sector span,
+      .role-card span,
+      .step span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .diagnostic {
+        display: grid;
+        grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+        gap: 18px;
+      }
+
+      .diagnostic-form,
+      .diagnostic-result {
+        padding: 22px;
+      }
+
+      label {
+        display: block;
+        margin-top: 14px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      select,
+      textarea,
+      input {
+        width: 100%;
+        margin-top: 8px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 12px;
+        color: var(--ink);
+        background: var(--canvas);
+      }
+
+      textarea {
+        min-height: 112px;
+        resize: vertical;
+      }
+
+      .result-copy {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .result-meta {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .result-meta div {
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+      }
+
+      .result-meta strong {
+        display: block;
+        color: var(--green);
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .result-meta span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .lead-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .lead-form .button-primary {
+        width: 100%;
+      }
+
+      .workforce-band {
+        margin: 34px 0 0;
+        padding: 32px;
+        border-radius: 10px;
+        color: var(--paper);
+        background: var(--green);
+      }
+
+      .workforce-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .workforce-band h2,
+      .workforce-band h3,
+      .workforce-band .eyebrow {
+        color: var(--paper);
+      }
+
+      .workforce-band .eyebrow {
+        color: var(--bronze);
+      }
+
+      .workforce-band p,
+      .workforce-band span {
+        color: rgba(246, 243, 238, 0.76);
+      }
+
+      .role-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .role-card {
+        border-color: rgba(246, 243, 238, 0.2);
+        color: var(--paper);
+        background: rgba(246, 243, 238, 0.08);
+        text-align: left;
+      }
+
+      .role-card strong {
+        color: var(--paper);
+      }
+
+      .role-card.active {
+        color: var(--ink);
+        background: var(--bronze);
+      }
+
+      .role-card.active strong,
+      .role-card.active span {
+        color: var(--ink);
+      }
+
+      .role-output {
+        margin-top: 14px;
+        border: 1px solid rgba(246, 243, 238, 0.2);
+        border-radius: 8px;
+        padding: 22px;
+        background: rgba(20, 53, 41, 0.62);
+      }
+
+      .role-output h3 {
+        color: var(--bronze);
+      }
+
+      .role-output p {
+        margin-top: 12px;
+        color: rgba(246, 243, 238, 0.78);
+      }
+
+      .sprint {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 18px;
+      }
+
+      .sprint-main {
+        padding: 28px;
+        border-radius: 8px;
+        color: var(--paper);
+        background: var(--green);
+      }
+
+      .sprint-main h2 {
+        color: var(--paper);
+        font-size: clamp(42px, 5vw, 78px);
+      }
+
+      .sprint-main p {
+        margin-top: 16px;
+        color: rgba(246, 243, 238, 0.78);
+      }
+
+      .step-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+      }
+
+      .step-number {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 999px;
+        color: var(--ink);
+        background: var(--bronze);
+        font-weight: 800;
+      }
+
+      .sector-grid,
+      .proof-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .proof {
+        display: flex;
+        min-height: 300px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .proof blockquote {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Playfair Display", serif;
+        font-size: 25px;
+        line-height: 1.18;
+      }
+
+      .proof footer {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 24px;
+        align-items: center;
+        border-top: 2px solid var(--green);
+        border-bottom: 2px solid var(--green);
+        padding: 28px 0;
+      }
+
+      .contact h2 {
+        font-size: clamp(42px, 5vw, 76px);
+      }
+
+      .contact p {
+        margin-top: 12px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 1040px) {
+        .hero,
+        .section-grid,
+        .reality-grid,
+        .diagnostic,
+        .workforce-grid,
+        .sprint,
+        .contact {
+          grid-template-columns: 1fr;
+        }
+
+        .source-strip {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .source-strip a {
+          border-bottom: 1px solid var(--line);
+        }
+
+        .sector-grid,
+        .proof-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar-inner {
+          grid-template-columns: 1fr auto;
+          padding: 12px 16px;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .page {
+          padding: 0 16px 52px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 42px;
+        }
+
+        .hero h1,
+        .section-title h2,
+        .sprint-main h2,
+        .contact h2 {
+          font-size: clamp(40px, 12.5vw, 58px);
+        }
+
+        .question-grid,
+        .source-strip,
+        .role-list,
+        .result-meta,
+        .lead-form {
+          grid-template-columns: 1fr;
+        }
+
+        .metric {
+          grid-template-columns: 1fr;
+        }
+
+        .workforce-band {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#top">
+          <strong>threesixty1</strong>
+          <span data-i18n="brandLine">AI som faktisk blir arbeid</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#diagnostic" data-i18n="navDiagnostic">Diagnose</a>
+          <a href="#workforce" data-i18n="navWorkforce">AI-roller</a>
+          <a href="#sprint" data-i18n="navSprint">30 dager</a>
+          <a href="#proof" data-i18n="navProof">Bevis</a>
+        </nav>
+        <div class="language-toggle" aria-label="Language">
+          <button type="button" class="active" data-lang="no">NO</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="heroEyebrow">Operasjonell AI for norske SMB-ledere</p>
+          <h1 data-i18n="heroTitle">AI er allerede i bedriften din. Nå må det bli arbeid.</h1>
+          <p class="hero-lead" data-i18n="heroLead">Jeg hjelper lederteam gå fra spredt AI-bruk til trygge arbeidsflyter, tydelige prioriteringer og en første prototype teamet kan teste på 30 dager.</p>
+          <div class="cta-row">
+            <a class="button-primary" href="#diagnostic" data-i18n="heroPrimary">Finn første arbeidsflyt</a>
+            <a class="button-secondary" href="#sprint" data-i18n="heroSecondary">Se sprinten</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <img src="../public/assets/henrik-portrait.jpg" alt="Henrik C. Host" />
+          <div class="hero-card-body">
+            <p class="eyebrow" data-i18n="operatorEyebrow">Hvorfor Henrik</p>
+            <p class="operator-line" data-i18n="operatorLine">Leder, selger, bygger og oversetter. Ikke bare AI-rådgiver.</p>
+            <p class="operator-copy" data-i18n="operatorCopy">25 års ledererfaring kombinert med praktisk AI-bygging. Jeg starter med arbeidet, risikoen og menneskene som faktisk skal bruke løsningen.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="source-strip" aria-label="Research sources">
+        <a href="https://www.ssb.no/teknologi-og-innovasjon/informasjons-og-kommunikasjonsteknologi-ikt/statistikk/bruk-av-ikt-i-naeringslivet/artikler/bruken-av-ki-har-skutt-fart-det-siste-aret" target="_blank" rel="noreferrer">
+          <span>SSB</span>
+          <strong data-i18n="sourceSsb">AI-bruk skyter fart, men bedrifter henger etter privat bruk.</strong>
+        </a>
+        <a href="https://www.regjeringen.no/no/dokumenter/regionale-utviklingstrekk-2025/id3111381/?ch=10" target="_blank" rel="noreferrer">
+          <span>Regjeringen</span>
+          <strong data-i18n="sourceGov">Norske SMB-er under 100 ansatte er en sentral del av næringslivet.</strong>
+        </a>
+        <a href="https://www.deloitte.com/dk/en/Industries/technology/research/adopting-and-scaling-gen-ai-in-the-nordics.html" target="_blank" rel="noreferrer">
+          <span>Deloitte</span>
+          <strong data-i18n="sourceDeloitte">Nordiske virksomheter er forsiktige med GenAI-skalering.</strong>
+        </a>
+        <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value" target="_blank" rel="noreferrer">
+          <span>McKinsey</span>
+          <strong data-i18n="sourceMck">Målbar verdi krever arbeidsflytendring og ledereierskap.</strong>
+        </a>
+        <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born" target="_blank" rel="noreferrer">
+          <span>Microsoft</span>
+          <strong data-i18n="sourceMs">Agentarbeid endrer hvordan oppgaver delegeres og organiseres.</strong>
+        </a>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-title">
+            <p class="eyebrow" data-i18n="realityEyebrow">Markedets realitet</p>
+            <h2 data-i18n="realityTitle">Problemet er ikke tilgang til AI. Problemet er å få verdi ut av det.</h2>
+            <p data-i18n="realityLead">Dette er lederbriefen som møter CEO-en der de faktisk er: nysgjerrig, travel, skeptisk og klar over at teamet allerede prøver seg frem.</p>
+          </div>
+          <div class="reality-grid">
+            <div class="metric-panel">
+              <div class="metric"><strong>54%</strong><span data-i18n="metricOne">av nordmenn brukte generative AI-verktøy i 2025, ifølge SSB.</span></div>
+              <div class="metric"><strong>3/10</strong><span data-i18n="metricTwo">norske foretak med minst ti ansatte bruker AI-teknologi.</span></div>
+              <div class="metric"><strong>1</strong><span data-i18n="metricThree">valg for ledere: tilfeldig verktøybruk eller styrt arbeidsflyt.</span></div>
+            </div>
+            <div class="paper-panel">
+              <p class="eyebrow" data-i18n="leaderQuestionsEyebrow">Lederens spørsmål</p>
+              <h3 data-i18n="leaderQuestionsTitle">Hvor starter vi, hva er trygt, og hvordan vet vi at dette ikke bare blir støy?</h3>
+              <p data-i18n="leaderQuestionsCopy">Nettstedet skal svare ved å gjøre første steg konkret. Ikke med en lang teknologiforklaring, men med en diagnose, en operativ rolle og en tydelig 30-dagers sprint.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-title">
+            <p class="eyebrow" data-i18n="dilemmaEyebrow">Hva lederen tenker</p>
+            <h2 data-i18n="dilemmaTitle">Skepsisen skal være synlig på siden.</h2>
+            <p data-i18n="dilemmaLead">Når en leder ser sine egne spørsmål formulert presist, føles Henrik allerede relevant.</p>
+          </div>
+          <div class="question-grid">
+            <div class="question"><strong data-i18n="q1Title">Har vi allerede kommet for sent i gang?</strong><span data-i18n="q1Copy">Ikke nødvendigvis. Men vinduet for å lære raskere enn konkurrentene blir mindre.</span></div>
+            <div class="question"><strong data-i18n="q2Title">Hva skal vi ikke automatisere?</strong><span data-i18n="q2Copy">Beslutninger med høy risiko, sensitiv data og arbeid som krever menneskelig vurdering først.</span></div>
+            <div class="question"><strong data-i18n="q3Title">Hvor kan vi få effekt raskt?</strong><span data-i18n="q3Copy">Møter, dokumenter, anbud, kundeoppfølging, rapportering og intern kunnskap.</span></div>
+            <div class="question"><strong data-i18n="q4Title">Hvordan får vi teamet med?</strong><span data-i18n="q4Copy">Ved å la dem teste en nyttig første versjon på ekte arbeid, ikke bare høre om muligheter.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="diagnostic" class="section">
+        <div class="section-grid">
+          <div class="section-title">
+            <p class="eyebrow" data-i18n="diagnosticEyebrow">Interaktiv diagnose</p>
+            <h2 data-i18n="diagnosticTitle">Finn første arbeidsflyt på to minutter.</h2>
+            <p data-i18n="diagnosticLead">Dette er broen fra nettsted til salg. Lederen får et konkret forslag. Henrik får et kvalifisert utgangspunkt for samtalen.</p>
+          </div>
+          <div class="diagnostic" data-diagnostic>
+            <form class="diagnostic-form">
+              <p class="eyebrow" data-i18n="formEyebrow">Prøv V1-diagnosen</p>
+              <label data-i18n="sectorLabel">Sektor</label>
+              <select name="sector">
+                <option value="recruitment" data-i18n="sectorRecruitment">Rekruttering og bemanning</option>
+                <option value="accounting" data-i18n="sectorAccounting">Regnskap og rådgivning</option>
+                <option value="agency" data-i18n="sectorAgency">Byrå og profesjonelle tjenester</option>
+                <option value="property" data-i18n="sectorProperty">Eiendom og prosjekt</option>
+                <option value="law" data-i18n="sectorLaw">Advokat og juridiske tjenester</option>
+              </select>
+              <label data-i18n="sizeLabel">Antall ansatte</label>
+              <select name="size">
+                <option value="20">20 til 50</option>
+                <option value="50">50 til 100</option>
+                <option value="100">100 til 200</option>
+              </select>
+              <label data-i18n="pressureLabel">Største press akkurat nå</label>
+              <select name="pressure">
+                <option value="capacity" data-i18n="pressureCapacity">For lite kapasitet</option>
+                <option value="quality" data-i18n="pressureQuality">For mye manuelt kvalitetsarbeid</option>
+                <option value="sales" data-i18n="pressureSales">For tregt salg og oppfølging</option>
+                <option value="coordination" data-i18n="pressureCoordination">For mye koordinering</option>
+              </select>
+              <label data-i18n="workflowLabel">Arbeidsflyt som går igjen</label>
+              <textarea data-i18n-placeholder="workflowPlaceholder" placeholder="Eksempel: anbud, møtereferater, dokumentkontroll, kundeoppfølging eller rapportering."></textarea>
+            </form>
+            <div class="diagnostic-result">
+              <p class="eyebrow" data-i18n="resultEyebrow">Anbefalt første test</p>
+              <h3 data-result-title>AI-støttet sourcing og oppfølging</h3>
+              <p class="result-copy" data-result-copy>Start med research, kandidatoppsummering og strukturert oppfølging. Mennesket eier vurdering og relasjon.</p>
+              <div class="result-meta">
+                <div><strong data-i18n="riskLabel">Risiko</strong><span data-result-risk>Middels</span></div>
+                <div><strong data-i18n="timeLabel">Tid</strong><span data-result-time>30 dager</span></div>
+                <div><strong data-i18n="nextLabel">Neste steg</strong><span data-result-next>Sprint</span></div>
+              </div>
+              <div class="lead-form">
+                <input type="text" data-i18n-placeholder="namePlaceholder" placeholder="Navn" />
+                <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="E-post" />
+                <a class="button-primary" href="mailto:henrik@threesixty1.com" data-i18n="sendToHenrik">Send til Henrik</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="workforce" class="workforce-band">
+          <div class="workforce-grid">
+            <div>
+              <p class="eyebrow" data-i18n="workforceEyebrow">Employees361-elementet</p>
+              <h2 data-i18n="workforceTitle">Gjør AI konkret som kapasitet, ikke teori.</h2>
+              <p data-i18n="workforceLead">Dette er den operative app-delen av nettstedet. Lederen kan se hvilke AI-støttede roller som kan bygges rundt menneskene, uten å erstatte ansvar, relasjon eller vurdering.</p>
+              <div class="metric" style="border-color: rgba(246,243,238,0.22); margin-top: 22px;"><strong style="color: var(--bronze);">30</strong><span data-i18n="workforceMetric">dager til en første operativ arbeidsflyt.</span></div>
+            </div>
+            <div>
+              <div class="role-list">
+                <button class="role-card active" type="button" data-role="meeting"><strong data-i18n="roleMeeting">Møteassistent</strong><span data-i18n="roleMeetingSmall">Agenda, referat og oppfølging</span></button>
+                <button class="role-card" type="button" data-role="document"><strong data-i18n="roleDocument">Dokumentbehandler</strong><span data-i18n="roleDocumentSmall">Sjekk, struktur og utkast</span></button>
+                <button class="role-card" type="button" data-role="customer"><strong data-i18n="roleCustomer">Kundeservice</strong><span data-i18n="roleCustomerSmall">Svarutkast og kunnskap</span></button>
+                <button class="role-card" type="button" data-role="reporting"><strong data-i18n="roleReporting">Rapportering</strong><span data-i18n="roleReportingSmall">Oppsummering og analyse</span></button>
+                <button class="role-card" type="button" data-role="sales"><strong data-i18n="roleSales">Salg og oppfølging</strong><span data-i18n="roleSalesSmall">Research og neste steg</span></button>
+                <button class="role-card" type="button" data-role="onboarding"><strong data-i18n="roleOnboarding">Nyansatt-opplæring</strong><span data-i18n="roleOnboardingSmall">Rutiner og intern kunnskap</span></button>
+              </div>
+              <div class="role-output">
+                <h3 data-role-title>Møteassistent</h3>
+                <p data-role-copy>Forbereder agenda, oppsummerer beslutninger og lager oppfølging slik at møtene får fremdrift.</p>
+                <p><strong data-i18n="humanLabel">Menneskelig ansvar:</strong> <span data-role-human>Lederen godkjenner beslutninger, prioritering og kommunikasjon.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sprint" class="section">
+        <div class="sprint">
+          <div class="sprint-main">
+            <p class="eyebrow" data-i18n="sprintEyebrow">Kjøpbar inngang</p>
+            <h2 data-i18n="sprintTitle">30-dagers AI Transformation Sprint.</h2>
+            <p data-i18n="sprintLead">I løpet av 30 dager identifiserer, prioriterer og prototyper vi 1 til 3 AI-støttede arbeidsflyter teamet kan teste trygt.</p>
+          </div>
+          <div class="step-list">
+            <div class="step"><div class="step-number">1</div><div><strong data-i18n="s1Title">Identifiser problemet</strong><span data-i18n="s1Copy">Definer hvilken operativ friksjon som faktisk koster tid, kvalitet eller salg.</span></div></div>
+            <div class="step"><div class="step-number">2</div><div><strong data-i18n="s2Title">Kartlegg arbeidsflyten</strong><span data-i18n="s2Copy">Dokumenter hvordan arbeidet gjøres i dag og hvor mennesker må beholde kontrollen.</span></div></div>
+            <div class="step"><div class="step-number">3</div><div><strong data-i18n="s3Title">Velg første test</strong><span data-i18n="s3Copy">Prioriter en arbeidsflyt som er nyttig, trygg og mulig å teste raskt.</span></div></div>
+            <div class="step"><div class="step-number">4</div><div><strong data-i18n="s4Title">Bygg prototype V1</strong><span data-i18n="s4Copy">Lag en enkel fungerende versjon som teamet kan reagere på.</span></div></div>
+            <div class="step"><div class="step-number">5</div><div><strong data-i18n="s5Title">Test med teamet</strong><span data-i18n="s5Copy">Bruk ekte arbeid, samle tilbakemeldinger og bestem neste steg.</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-title">
+            <p class="eyebrow" data-i18n="sectorsEyebrow">Hvor vi starter</p>
+            <h2 data-i18n="sectorsTitle">Konkrete innganger for SMB-sektorer.</h2>
+            <p data-i18n="sectorsLead">Dette gjør nettstedet mer salgbart: en CEO ser sin egen type bedrift og får et startpunkt.</p>
+          </div>
+          <div class="sector-grid">
+            <div class="sector"><strong data-i18n="secRecruitmentTitle">Rekruttering</strong><span data-i18n="secRecruitmentCopy">Sourcing, kandidatoppsummering, kundeoppfølging og CRM-ryddighet.</span></div>
+            <div class="sector"><strong data-i18n="secAccountingTitle">Regnskap og rådgivning</strong><span data-i18n="secAccountingCopy">Dokumentinnhenting, klientkommunikasjon, avvik og rådgivningsnotater.</span></div>
+            <div class="sector"><strong data-i18n="secAgencyTitle">Byrå og tjenester</strong><span data-i18n="secAgencyCopy">Brief, pitch, produksjon, status og kvalitetssikring av leveranser.</span></div>
+            <div class="sector"><strong data-i18n="secPropertyTitle">Eiendom og prosjekt</strong><span data-i18n="secPropertyCopy">Møter, dokumentflyt, prosjektavklaringer og beslutningslogg.</span></div>
+            <div class="sector"><strong data-i18n="secLawTitle">Advokat</strong><span data-i18n="secLawCopy">Intake, dokumentstruktur, kunnskapssøk og utkast med menneskelig kontroll.</span></div>
+            <div class="sector"><strong data-i18n="secGeneralTitle">Andre SMB-er</strong><span data-i18n="secGeneralCopy">Start med repeterbart arbeid der tid, kvalitet eller oppfølging lekker.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof" class="section">
+        <div class="section-grid">
+          <div class="section-title">
+            <p class="eyebrow" data-i18n="proofEyebrow">Bevis fra eksisterende side</p>
+            <h2 data-i18n="proofTitle">Erfaring som gjør AI mindre abstrakt.</h2>
+            <p data-i18n="proofLead">Dette er troverdigheten fra threesixtyone.ai, men satt inn der den hjelper salget.</p>
+          </div>
+          <div class="proof-grid">
+            <div class="proof"><blockquote data-i18n="quoteOne">Han kombinerer dyp forretningsforståelse med teknologisk innsikt.</blockquote><footer>John Henrik Andersen, Cegal</footer></div>
+            <div class="proof"><blockquote data-i18n="quoteTwo">Uten en stødig veiviser som Henrik er ikke AI-reisen å anbefale.</blockquote><footer>Anders Lillegjerdet-Holen, Sigdal Vest</footer></div>
+            <div class="proof"><blockquote data-i18n="quoteThree">Han bidrar til å skape klarhet og enkelhet med tydelige resultater.</blockquote><footer>Kristin Ruud, Telenor</footer></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact">
+          <div>
+            <p class="eyebrow" data-i18n="contactEyebrow">Neste steg</p>
+            <h2 data-i18n="contactTitle">Ta med én arbeidsflyt. Vi finner første versjon.</h2>
+            <p data-i18n="contactLead">Ikke et salgsmøte først. En arbeidsøkt der vi finner et konkret sted å begynne.</p>
+          </div>
+          <a class="button-primary" href="mailto:henrik@threesixty1.com" data-i18n="contactCta">Book arbeidsøkt</a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const translations = {
+        no: {
+          brandLine: "AI som faktisk blir arbeid",
+          navDiagnostic: "Diagnose",
+          navWorkforce: "AI-roller",
+          navSprint: "30 dager",
+          navProof: "Bevis",
+          heroEyebrow: "Operasjonell AI for norske SMB-ledere",
+          heroTitle: "AI er allerede i bedriften din. Nå må det bli arbeid.",
+          heroLead: "Jeg hjelper lederteam gå fra spredt AI-bruk til trygge arbeidsflyter, tydelige prioriteringer og en første prototype teamet kan teste på 30 dager.",
+          heroPrimary: "Finn første arbeidsflyt",
+          heroSecondary: "Se sprinten",
+          operatorEyebrow: "Hvorfor Henrik",
+          operatorLine: "Leder, selger, bygger og oversetter. Ikke bare AI-rådgiver.",
+          operatorCopy: "25 års ledererfaring kombinert med praktisk AI-bygging. Jeg starter med arbeidet, risikoen og menneskene som faktisk skal bruke løsningen.",
+          sourceSsb: "AI-bruk skyter fart, men bedrifter henger etter privat bruk.",
+          sourceGov: "Norske SMB-er under 100 ansatte er en sentral del av næringslivet.",
+          sourceDeloitte: "Nordiske virksomheter er forsiktige med GenAI-skalering.",
+          sourceMck: "Målbar verdi krever arbeidsflytendring og ledereierskap.",
+          sourceMs: "Agentarbeid endrer hvordan oppgaver delegeres og organiseres.",
+          realityEyebrow: "Markedets realitet",
+          realityTitle: "Problemet er ikke tilgang til AI. Problemet er å få verdi ut av det.",
+          realityLead: "Dette er lederbriefen som møter CEO-en der de faktisk er: nysgjerrig, travel, skeptisk og klar over at teamet allerede prøver seg frem.",
+          metricOne: "av nordmenn brukte generative AI-verktøy i 2025, ifølge SSB.",
+          metricTwo: "norske foretak med minst ti ansatte bruker AI-teknologi.",
+          metricThree: "valg for ledere: tilfeldig verktøybruk eller styrt arbeidsflyt.",
+          leaderQuestionsEyebrow: "Lederens spørsmål",
+          leaderQuestionsTitle: "Hvor starter vi, hva er trygt, og hvordan vet vi at dette ikke bare blir støy?",
+          leaderQuestionsCopy: "Nettstedet skal svare ved å gjøre første steg konkret. Ikke med en lang teknologiforklaring, men med en diagnose, en operativ rolle og en tydelig 30-dagers sprint.",
+          dilemmaEyebrow: "Hva lederen tenker",
+          dilemmaTitle: "Skepsisen skal være synlig på siden.",
+          dilemmaLead: "Når en leder ser sine egne spørsmål formulert presist, føles Henrik allerede relevant.",
+          q1Title: "Har vi allerede kommet for sent i gang?",
+          q1Copy: "Ikke nødvendigvis. Men vinduet for å lære raskere enn konkurrentene blir mindre.",
+          q2Title: "Hva skal vi ikke automatisere?",
+          q2Copy: "Beslutninger med høy risiko, sensitiv data og arbeid som krever menneskelig vurdering først.",
+          q3Title: "Hvor kan vi få effekt raskt?",
+          q3Copy: "Møter, dokumenter, anbud, kundeoppfølging, rapportering og intern kunnskap.",
+          q4Title: "Hvordan får vi teamet med?",
+          q4Copy: "Ved å la dem teste en nyttig første versjon på ekte arbeid, ikke bare høre om muligheter.",
+          diagnosticEyebrow: "Interaktiv diagnose",
+          diagnosticTitle: "Finn første arbeidsflyt på to minutter.",
+          diagnosticLead: "Dette er broen fra nettsted til salg. Lederen får et konkret forslag. Henrik får et kvalifisert utgangspunkt for samtalen.",
+          formEyebrow: "Prøv V1-diagnosen",
+          sectorLabel: "Sektor",
+          sectorRecruitment: "Rekruttering og bemanning",
+          sectorAccounting: "Regnskap og rådgivning",
+          sectorAgency: "Byrå og profesjonelle tjenester",
+          sectorProperty: "Eiendom og prosjekt",
+          sectorLaw: "Advokat og juridiske tjenester",
+          sizeLabel: "Antall ansatte",
+          pressureLabel: "Største press akkurat nå",
+          pressureCapacity: "For lite kapasitet",
+          pressureQuality: "For mye manuelt kvalitetsarbeid",
+          pressureSales: "For tregt salg og oppfølging",
+          pressureCoordination: "For mye koordinering",
+          workflowLabel: "Arbeidsflyt som går igjen",
+          workflowPlaceholder: "Eksempel: anbud, møtereferater, dokumentkontroll, kundeoppfølging eller rapportering.",
+          resultEyebrow: "Anbefalt første test",
+          riskLabel: "Risiko",
+          timeLabel: "Tid",
+          nextLabel: "Neste steg",
+          namePlaceholder: "Navn",
+          emailPlaceholder: "E-post",
+          sendToHenrik: "Send til Henrik",
+          workforceEyebrow: "Employees361-elementet",
+          workforceTitle: "Gjør AI konkret som kapasitet, ikke teori.",
+          workforceLead: "Dette er den operative app-delen av nettstedet. Lederen kan se hvilke AI-støttede roller som kan bygges rundt menneskene, uten å erstatte ansvar, relasjon eller vurdering.",
+          workforceMetric: "dager til en første operativ arbeidsflyt.",
+          roleMeeting: "Møteassistent",
+          roleMeetingSmall: "Agenda, referat og oppfølging",
+          roleDocument: "Dokumentbehandler",
+          roleDocumentSmall: "Sjekk, struktur og utkast",
+          roleCustomer: "Kundeservice",
+          roleCustomerSmall: "Svarutkast og kunnskap",
+          roleReporting: "Rapportering",
+          roleReportingSmall: "Oppsummering og analyse",
+          roleSales: "Salg og oppfølging",
+          roleSalesSmall: "Research og neste steg",
+          roleOnboarding: "Nyansatt-opplæring",
+          roleOnboardingSmall: "Rutiner og intern kunnskap",
+          humanLabel: "Menneskelig ansvar:",
+          sprintEyebrow: "Kjøpbar inngang",
+          sprintTitle: "30-dagers AI Transformation Sprint.",
+          sprintLead: "I løpet av 30 dager identifiserer, prioriterer og prototyper vi 1 til 3 AI-støttede arbeidsflyter teamet kan teste trygt.",
+          s1Title: "Identifiser problemet",
+          s1Copy: "Definer hvilken operativ friksjon som faktisk koster tid, kvalitet eller salg.",
+          s2Title: "Kartlegg arbeidsflyten",
+          s2Copy: "Dokumenter hvordan arbeidet gjøres i dag og hvor mennesker må beholde kontrollen.",
+          s3Title: "Velg første test",
+          s3Copy: "Prioriter en arbeidsflyt som er nyttig, trygg og mulig å teste raskt.",
+          s4Title: "Bygg prototype V1",
+          s4Copy: "Lag en enkel fungerende versjon som teamet kan reagere på.",
+          s5Title: "Test med teamet",
+          s5Copy: "Bruk ekte arbeid, samle tilbakemeldinger og bestem neste steg.",
+          sectorsEyebrow: "Hvor vi starter",
+          sectorsTitle: "Konkrete innganger for SMB-sektorer.",
+          sectorsLead: "Dette gjør nettstedet mer salgbart: en CEO ser sin egen type bedrift og får et startpunkt.",
+          secRecruitmentTitle: "Rekruttering",
+          secRecruitmentCopy: "Sourcing, kandidatoppsummering, kundeoppfølging og CRM-ryddighet.",
+          secAccountingTitle: "Regnskap og rådgivning",
+          secAccountingCopy: "Dokumentinnhenting, klientkommunikasjon, avvik og rådgivningsnotater.",
+          secAgencyTitle: "Byrå og tjenester",
+          secAgencyCopy: "Brief, pitch, produksjon, status og kvalitetssikring av leveranser.",
+          secPropertyTitle: "Eiendom og prosjekt",
+          secPropertyCopy: "Møter, dokumentflyt, prosjektavklaringer og beslutningslogg.",
+          secLawTitle: "Advokat",
+          secLawCopy: "Intake, dokumentstruktur, kunnskapssøk og utkast med menneskelig kontroll.",
+          secGeneralTitle: "Andre SMB-er",
+          secGeneralCopy: "Start med repeterbart arbeid der tid, kvalitet eller oppfølging lekker.",
+          proofEyebrow: "Bevis fra eksisterende side",
+          proofTitle: "Erfaring som gjør AI mindre abstrakt.",
+          proofLead: "Dette er troverdigheten fra threesixtyone.ai, men satt inn der den hjelper salget.",
+          quoteOne: "Han kombinerer dyp forretningsforståelse med teknologisk innsikt.",
+          quoteTwo: "Uten en stødig veiviser som Henrik er ikke AI-reisen å anbefale.",
+          quoteThree: "Han bidrar til å skape klarhet og enkelhet med tydelige resultater.",
+          contactEyebrow: "Neste steg",
+          contactTitle: "Ta med én arbeidsflyt. Vi finner første versjon.",
+          contactLead: "Ikke et salgsmøte først. En arbeidsøkt der vi finner et konkret sted å begynne.",
+          contactCta: "Book arbeidsøkt"
+        },
+        en: {
+          brandLine: "AI that becomes real work",
+          navDiagnostic: "Diagnostic",
+          navWorkforce: "AI roles",
+          navSprint: "30 days",
+          navProof: "Proof",
+          heroEyebrow: "Operational AI for Norwegian SMB leaders",
+          heroTitle: "AI is already inside your company. Now it has to become work.",
+          heroLead: "I help leadership teams move from scattered AI use to safe workflows, clear priorities and a first prototype the team can test in 30 days.",
+          heroPrimary: "Find first workflow",
+          heroSecondary: "See the sprint",
+          operatorEyebrow: "Why Henrik",
+          operatorLine: "Leader, seller, builder and translator. Not just an AI advisor.",
+          operatorCopy: "25 years of leadership experience combined with practical AI building. I start with the work, the risk and the people who actually need to use the solution.",
+          sourceSsb: "AI use is accelerating, but companies trail personal use.",
+          sourceGov: "Norwegian SMBs below 100 employees are central to business life.",
+          sourceDeloitte: "Nordic companies are cautious when scaling GenAI.",
+          sourceMck: "Measurable value requires workflow change and leadership ownership.",
+          sourceMs: "Agent work changes how tasks are delegated and organized.",
+          realityEyebrow: "Market reality",
+          realityTitle: "The problem is not access to AI. The problem is getting value from it.",
+          realityLead: "This leadership brief meets the CEO where they actually are: curious, busy, skeptical and aware that the team is already experimenting.",
+          metricOne: "of Norwegians used generative AI tools in 2025, according to SSB.",
+          metricTwo: "Norwegian companies with at least ten employees use AI technology.",
+          metricThree: "choice for leaders: random tool use or managed workflow change.",
+          leaderQuestionsEyebrow: "The leader's questions",
+          leaderQuestionsTitle: "Where do we start, what is safe, and how do we know this will not become noise?",
+          leaderQuestionsCopy: "The site should answer by making the first step concrete. Not with a long technology explanation, but with a diagnosis, an operational role and a clear 30-day sprint.",
+          dilemmaEyebrow: "What the leader thinks",
+          dilemmaTitle: "The skepticism should be visible on the page.",
+          dilemmaLead: "When a leader sees their own questions stated precisely, Henrik already feels relevant.",
+          q1Title: "Have we already started too late?",
+          q1Copy: "Not necessarily. But the window for learning faster than competitors is getting smaller.",
+          q2Title: "What should we not automate?",
+          q2Copy: "High-risk decisions, sensitive data and work that requires human judgment first.",
+          q3Title: "Where can we get quick effect?",
+          q3Copy: "Meetings, documents, tenders, customer follow-up, reporting and internal knowledge.",
+          q4Title: "How do we bring the team along?",
+          q4Copy: "Let them test a useful first version on real work, not just hear about possibilities.",
+          diagnosticEyebrow: "Interactive diagnostic",
+          diagnosticTitle: "Find the first workflow in two minutes.",
+          diagnosticLead: "This is the bridge from website to sales. The leader gets a concrete suggestion. Henrik gets a qualified starting point for the conversation.",
+          formEyebrow: "Try the V1 diagnostic",
+          sectorLabel: "Sector",
+          sectorRecruitment: "Recruitment and staffing",
+          sectorAccounting: "Accounting and advisory",
+          sectorAgency: "Agency and professional services",
+          sectorProperty: "Property and projects",
+          sectorLaw: "Law and legal services",
+          sizeLabel: "Number of employees",
+          pressureLabel: "Biggest pressure right now",
+          pressureCapacity: "Too little capacity",
+          pressureQuality: "Too much manual quality work",
+          pressureSales: "Sales and follow-up are too slow",
+          pressureCoordination: "Too much coordination",
+          workflowLabel: "Recurring workflow",
+          workflowPlaceholder: "Example: tenders, meeting notes, document checks, customer follow-up or reporting.",
+          resultEyebrow: "Recommended first test",
+          riskLabel: "Risk",
+          timeLabel: "Time",
+          nextLabel: "Next step",
+          namePlaceholder: "Name",
+          emailPlaceholder: "Email",
+          sendToHenrik: "Send to Henrik",
+          workforceEyebrow: "The employees361 element",
+          workforceTitle: "Make AI concrete as capacity, not theory.",
+          workforceLead: "This is the operational app part of the site. The leader can see which AI-supported roles can be built around people without replacing responsibility, relationships or judgment.",
+          workforceMetric: "days to a first operational workflow.",
+          roleMeeting: "Meeting assistant",
+          roleMeetingSmall: "Agenda, notes and follow-up",
+          roleDocument: "Document handler",
+          roleDocumentSmall: "Checks, structure and drafts",
+          roleCustomer: "Customer service",
+          roleCustomerSmall: "Reply drafts and knowledge",
+          roleReporting: "Reporting",
+          roleReportingSmall: "Summary and analysis",
+          roleSales: "Sales follow-up",
+          roleSalesSmall: "Research and next steps",
+          roleOnboarding: "New hire onboarding",
+          roleOnboardingSmall: "Routines and internal knowledge",
+          humanLabel: "Human responsibility:",
+          sprintEyebrow: "Buyable entry point",
+          sprintTitle: "30-Day AI Transformation Sprint.",
+          sprintLead: "Within 30 days we identify, prioritize and prototype 1 to 3 AI-supported workflows your team can safely test.",
+          s1Title: "Identify the problem",
+          s1Copy: "Define the operational friction that actually costs time, quality or sales.",
+          s2Title: "Map the workflow",
+          s2Copy: "Document how the work is done today and where humans must keep control.",
+          s3Title: "Choose the first test",
+          s3Copy: "Prioritize a workflow that is useful, safe and possible to test quickly.",
+          s4Title: "Build prototype V1",
+          s4Copy: "Create a simple working version the team can react to.",
+          s5Title: "Test with the team",
+          s5Copy: "Use real work, collect feedback and decide the next step.",
+          sectorsEyebrow: "Where we start",
+          sectorsTitle: "Concrete entry points for SMB sectors.",
+          sectorsLead: "This makes the site easier to buy from: a CEO sees their own type of company and gets a starting point.",
+          secRecruitmentTitle: "Recruitment",
+          secRecruitmentCopy: "Sourcing, candidate summaries, customer follow-up and CRM clarity.",
+          secAccountingTitle: "Accounting and advisory",
+          secAccountingCopy: "Document collection, client communication, deviations and advisory notes.",
+          secAgencyTitle: "Agencies and services",
+          secAgencyCopy: "Briefs, pitches, production, status and quality checks.",
+          secPropertyTitle: "Property and projects",
+          secPropertyCopy: "Meetings, document flow, project clarifications and decision logs.",
+          secLawTitle: "Law",
+          secLawCopy: "Intake, document structure, knowledge search and drafts with human control.",
+          secGeneralTitle: "Other SMBs",
+          secGeneralCopy: "Start with repeat work where time, quality or follow-up leaks.",
+          proofEyebrow: "Proof from the existing site",
+          proofTitle: "Experience that makes AI less abstract.",
+          proofLead: "This is the credibility from threesixtyone.ai, placed where it helps sales.",
+          quoteOne: "He combines deep business understanding with technological insight.",
+          quoteTwo: "Without a steady guide like Henrik, navigating AI is not recommended.",
+          quoteThree: "He helps create clarity and simplicity with clear outcomes.",
+          contactEyebrow: "Next step",
+          contactTitle: "Bring one workflow. We find the first version.",
+          contactLead: "Not a sales meeting first. A working session where we find a concrete place to begin.",
+          contactCta: "Book working session"
+        }
+      };
+
+      const results = {
+        no: {
+          recruitment: {
+            capacity: ["AI-støttet sourcing og oppfølging", "Start med research, kandidatoppsummering og strukturert oppfølging. Mennesket eier vurdering og relasjon.", "Middels"],
+            quality: ["Kvalitetssjekk for kandidatpresentasjoner", "Sjekk CV, krav og notater før kandidaten sendes videre.", "Lav"],
+            sales: ["Kundeinnsikt før salgsdialog", "Samle bransjeinfo, historikk og mulige vinkler før kontakt.", "Lav"],
+            coordination: ["Intervjukoordinator", "Automatiser status, påminnelser og neste steg rundt intervju.", "Lav"]
+          },
+          accounting: {
+            capacity: ["AI-støttet klientkommunikasjon", "Lag utkast, oppsummeringer og faste svar rundt dokumentinnhenting.", "Lav"],
+            quality: ["Dokument- og avvikssjekk", "Kontroller bilag, avvik og manglende dokumentasjon med menneskelig godkjenning.", "Middels"],
+            sales: ["Rådgivningsnotat for kunder", "Gjør observasjoner om til et første rådgivningsutkast.", "Middels"],
+            coordination: ["Månedlig klientflyt", "Strukturer frister, mangler og oppfølging i én arbeidsflyt.", "Lav"]
+          },
+          agency: {
+            capacity: ["Produksjonsassistent", "Start med brief, utkast, kvalitetssjekk og status for leveranser.", "Lav"],
+            quality: ["Kvalitetssikring av kundeutkast", "Sjekk tone, krav, fakta og konsistens før godkjenning.", "Lav"],
+            sales: ["Pitch- og forslagsassistent", "Samle kundeinnsikt og form en skarpere første pitch.", "Lav"],
+            coordination: ["Prosjektstatus uten mas", "Oppsummer møtenotater, risiko og neste steg på tvers av teamet.", "Lav"]
+          },
+          property: {
+            capacity: ["Prosjektkoordinator", "Start med møtereferater, avklaringer, leverandørspørsmål og status.", "Lav"],
+            quality: ["Sjekk av prosjektunderlag", "Marker mangler, avvik og uklare punkter før menneskelig vurdering.", "Middels"],
+            sales: ["Interessentoppfølging", "Lag raskere svar, oppsummeringer og neste beste handling.", "Lav"],
+            coordination: ["Beslutningslogg", "Gjør beslutninger og ansvar synlige etter hvert prosjektmøte.", "Lav"]
+          },
+          law: {
+            capacity: ["Klientintake og sakssammendrag", "Strukturer innsendt materiale og marker åpne spørsmål.", "Middels"],
+            quality: ["Dokumentsjekk med fagkontroll", "Finn mangler, begreper og risiko før jurist vurderer.", "Middels"],
+            sales: ["Første behovsnotat", "Oppsummer klientens situasjon og foreslå avklaringer.", "Middels"],
+            coordination: ["Saksflyt og frister", "Synliggjør frister, dokumentstatus og neste handling.", "Lav"]
+          }
+        },
+        en: {
+          recruitment: {
+            capacity: ["AI-supported sourcing and follow-up", "Start with research, candidate summaries and structured follow-up. The human owns judgment and relationships.", "Medium"],
+            quality: ["Quality check for candidate presentations", "Check CVs, requirements and notes before the candidate moves forward.", "Low"],
+            sales: ["Customer insight before sales dialogue", "Gather sector info, history and possible angles before contact.", "Low"],
+            coordination: ["Interview coordinator", "Automate status, reminders and next steps around interviews.", "Low"]
+          },
+          accounting: {
+            capacity: ["AI-supported client communication", "Create drafts, summaries and recurring replies around document collection.", "Low"],
+            quality: ["Document and deviation check", "Check documentation, deviations and missing material with human approval.", "Medium"],
+            sales: ["Client advisory note", "Turn observations into a first advisory draft.", "Medium"],
+            coordination: ["Monthly client workflow", "Structure deadlines, missing items and follow-up in one workflow.", "Low"]
+          },
+          agency: {
+            capacity: ["Production assistant", "Start with briefs, drafts, quality checks and delivery status.", "Low"],
+            quality: ["Client draft quality check", "Check tone, requirements, facts and consistency before approval.", "Low"],
+            sales: ["Pitch and proposal assistant", "Gather customer insight and shape a sharper first pitch.", "Low"],
+            coordination: ["Project status without chasing", "Summarize meeting notes, risks and next steps across the team.", "Low"]
+          },
+          property: {
+            capacity: ["Project coordinator", "Start with meeting notes, clarifications, supplier questions and status.", "Low"],
+            quality: ["Project material check", "Flag missing details, deviations and unclear points before human review.", "Medium"],
+            sales: ["Stakeholder follow-up", "Create faster replies, summaries and next best action.", "Low"],
+            coordination: ["Decision log", "Make decisions and responsibilities visible after each project meeting.", "Low"]
+          },
+          law: {
+            capacity: ["Client intake and case summary", "Structure submitted material and flag open questions.", "Medium"],
+            quality: ["Document check with legal review", "Find gaps, terms and risks before lawyer review.", "Medium"],
+            sales: ["First needs note", "Summarize the client's situation and suggest clarifications.", "Medium"],
+            coordination: ["Case flow and deadlines", "Make deadlines, document status and next actions visible.", "Low"]
+          }
+        }
+      };
+
+      const roles = {
+        no: {
+          meeting: ["Møteassistent", "Forbereder agenda, oppsummerer beslutninger og lager oppfølging slik at møtene får fremdrift.", "Lederen godkjenner beslutninger, prioritering og kommunikasjon."],
+          document: ["Dokumentbehandler", "Leser, strukturerer og kvalitetssjekker dokumenter før menneskelig vurdering.", "Fageier godkjenner innhold, risiko og ekstern bruk."],
+          customer: ["Kundeservice", "Foreslår svar, finner relevant kunnskap og markerer saker som trenger menneske.", "Teamet eier tone, unntak og vanskelige kundesituasjoner."],
+          reporting: ["Rapportering", "Samler punkter, lager første analyse og foreslår ledelsesoppsummering.", "Lederen vurderer konklusjon, prioritering og tiltak."],
+          sales: ["Salg og oppfølging", "Forbereder research, personaliserte vinkler og forslag til neste handling.", "Selgeren eier relasjon, timing og forhandling."],
+          onboarding: ["Nyansatt-opplæring", "Gjør rutiner, roller og kunnskap lettere å finne for nye ansatte.", "Mennesker eier kultur, forventninger og oppfølging."]
+        },
+        en: {
+          meeting: ["Meeting assistant", "Prepares agendas, summarizes decisions and creates follow-up so meetings create progress.", "The leader approves decisions, priorities and communication."],
+          document: ["Document handler", "Reads, structures and quality checks documents before human review.", "The subject owner approves content, risk and external use."],
+          customer: ["Customer service", "Suggests replies, finds relevant knowledge and flags cases that need a human.", "The team owns tone, exceptions and difficult customer situations."],
+          reporting: ["Reporting", "Collects points, creates a first analysis and suggests a leadership summary.", "The leader reviews conclusions, priorities and actions."],
+          sales: ["Sales follow-up", "Prepares research, personalized angles and suggestions for next action.", "The seller owns relationship, timing and negotiation."],
+          onboarding: ["New hire onboarding", "Makes routines, roles and knowledge easier for new employees to find.", "Humans own culture, expectations and follow-up."]
+        }
+      };
+
+      let lang = "no";
+
+      function applyLanguage(nextLang) {
+        lang = nextLang;
+        document.documentElement.lang = nextLang;
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.dataset.i18n;
+          if (translations[nextLang][key]) node.textContent = translations[nextLang][key];
+        });
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+          const key = node.dataset.i18nPlaceholder;
+          if (translations[nextLang][key]) node.placeholder = translations[nextLang][key];
+        });
+        document.querySelectorAll("[data-lang]").forEach((button) => {
+          button.classList.toggle("active", button.dataset.lang === nextLang);
+        });
+        updateDiagnostic();
+        updateRole(document.querySelector(".role-card.active")?.dataset.role || "meeting");
+      }
+
+      function updateDiagnostic() {
+        const root = document.querySelector("[data-diagnostic]");
+        const sector = root.querySelector("select[name='sector']").value;
+        const pressure = root.querySelector("select[name='pressure']").value;
+        const result = results[lang][sector][pressure];
+        root.querySelector("[data-result-title]").textContent = result[0];
+        root.querySelector("[data-result-copy]").textContent = result[1];
+        root.querySelector("[data-result-risk]").textContent = result[2];
+        root.querySelector("[data-result-time]").textContent = lang === "no" ? "30 dager" : "30 days";
+        root.querySelector("[data-result-next]").textContent = "Sprint";
+      }
+
+      function updateRole(role) {
+        const result = roles[lang][role];
+        document.querySelector("[data-role-title]").textContent = result[0];
+        document.querySelector("[data-role-copy]").textContent = result[1];
+        document.querySelector("[data-role-human]").textContent = result[2];
+        document.querySelectorAll(".role-card").forEach((button) => {
+          button.classList.toggle("active", button.dataset.role === role);
+        });
+      }
+
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+      });
+
+      document.querySelectorAll("[data-diagnostic] select").forEach((select) => {
+        select.addEventListener("change", updateDiagnostic);
+      });
+
+      document.querySelectorAll(".role-card").forEach((button) => {
+        button.addEventListener("click", () => updateRole(button.dataset.role));
+      });
+
+      applyLanguage("no");
+    </script>
+  </body>
+</html>
